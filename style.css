@@ -40,7 +40,7 @@ body {
   background: var(--bg);
 }
 .btn {
-  margin: top 1rem;
+  margin-top: 1rem;
   display: inline-block;
   padding: 0.9rem 3rem;
   font-size: 1.7rem;
@@ -102,7 +102,9 @@ body {
   transform: scaleY(0);
   transform-origin: top;
 }
-
+.header .search-form.active {
+  transform: scaleY(1);
+}
 .header .search-form input {
   height: 100%;
   width: 100%;
@@ -130,6 +132,9 @@ body {
   width: 35rem;
   background: #fff;
   padding: 0 1.5rem;
+}
+.header .cart-items-container.active {
+  right: 0;
 }
 .header .cart-items-container .cart-item {
   position: relative;
@@ -175,7 +180,7 @@ body {
     padding: 1.5rem 2rem;
   }
 }
-@media (max-width: 991px) {
+@media (max-width: 768px) {
   #menu-btn {
     display: inline-block;
   }
@@ -186,6 +191,10 @@ body {
     background: #fff;
     width: 30rem;
     height: calc(100vh - 9.5rem);
+    transition: right 0.3s ease-in-out;
+  }
+  .header .navbar.active {
+    right: 0;
   }
   .header .navbar a {
     color: var(--black);
@@ -193,5 +202,15 @@ body {
     margin: 1.5rem;
     padding: 0.5rem;
     font-size: 2rem;
+  }
+  .header .search-form {
+    width: 90%;
+    right: 2rem;
+  }
+}
+
+@media (max-width: 450px) {
+  html {
+    font-size: 50%;
   }
 }
